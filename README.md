@@ -18,6 +18,12 @@ To run this project, you will need to add the following environment variables to
   npm run dev
 ```
 
+## Docker Installation
+
+```bash
+  docker run -e "DOMAIN_URL=yourdomain.com" -e "DISCORD_WEBHOOK_URL=yourwebook.com" bedirhansamsa/domain-availability-checker
+```
+
 ## Authors
 
 - [@BEDIRHANSAMSA](https://www.github.com/BEDIRHANSAMSA)
