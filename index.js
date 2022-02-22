@@ -2,6 +2,7 @@ const { default: axios } = require("axios");
 var whois = require("whois");
 require("dotenv").config();
 
+console.log("Checking... ", process.env.DOMAIN_URL);
 setInterval(checkDomain, 1000 * 60 * 60); // every hour
 
 function checkDomain() {
@@ -13,7 +14,9 @@ function checkDomain() {
   }
 
   whois.lookup(domain, function (err, data) {
+    console.log("Domain checked at " + new Date());
     if (err) {
+      console.error(err);
     } else {
       if (data.indexOf("No match for") > -1) {
         sendMessage("Domain is available");
