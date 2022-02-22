@@ -1,0 +1,17 @@
+{
+  "name": "domain-availability-checker",
+  "version": "1.0.0",
+  "description": "Check the domain availability by sending a message to yourself via discord.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Bedirhan SAMSA <me@bedirhan.dev>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "dotenv": "^16.0.0",
+    "whois": "^2.13.9"
+  }
+}
