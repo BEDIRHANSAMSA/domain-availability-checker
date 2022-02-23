@@ -10,6 +10,8 @@ To run this project, you will need to add the following environment variables to
 
 `DISCORD_WEBHOOK_URL`
 
+`DISCORD_USER_ID`
+
 ## Installation
 
 ```bash
@@ -21,7 +23,7 @@ To run this project, you will need to add the following environment variables to
 ## Docker Installation
 
 ```bash
-  docker run -e "DOMAIN_URL=yourdomain.com" -e "DISCORD_WEBHOOK_URL=yourwebook.com" bedirhansamsa/domain-availability-checker
+  docker run -e "DOMAIN_URL=yourdomain.com" -e "DISCORD_WEBHOOK_URL=yourwebook.com" -e "DISCORD_USER_ID=YOUR_ID" bedirhansamsa/domain-availability-checker
 ```
 
 ## Authors

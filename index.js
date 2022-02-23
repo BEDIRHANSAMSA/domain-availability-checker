@@ -19,9 +19,11 @@ function checkDomain() {
       console.error(err);
     } else {
       if (data.indexOf("No match for") > -1) {
-        sendMessage("Domain is available");
+        sendMessage(
+          `Hey <@${process.env.DISCORD_USER_ID}>, domain is available.`
+        );
       } else {
-        sendMessage("Domain is not available");
+        sendMessage("Domain is not available.");
       }
     }
   });
