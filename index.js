@@ -1,32 +1,30 @@
-const { default: axios } = require("axios");
-var whois = require("whois");
-require("dotenv").config();
+import axios from "axios";
+import whois from "whois-json";
+import "dotenv/config";
 
 console.log("Checking... ", process.env.DOMAIN_URL);
-setInterval(checkDomain, 1000 * 60 * 60); // every hour
+setInterval(checkDomain, 1000 * 60 * 60);
 
-function checkDomain() {
-  var domain = process.env.DOMAIN_URL;
+async function checkDomain() {
+  const domain = process.env.DOMAIN_URL;
 
   if (!domain) {
     console.log("No domain specified in .env");
     return;
   }
 
-  whois.lookup(domain, function (err, data) {
-    console.log("Domain checked at " + new Date());
-    if (err) {
-      console.error(err);
-    } else {
-      if (data.indexOf("No match for") > -1) {
-        sendMessage(
-          `Hey <@${process.env.DISCORD_USER_ID}>, domain is available.`
-        );
-      } else {
-        sendMessage("Domain is not available.");
-      }
-    }
-  });
+  var data = await whois(domain);
+  if (!data) {
+    console.log("No data found");
+    return;
+  }
+
+  if (!data.domainName) {
+    sendMessage(`Hey <@${process.env.DISCORD_USER_ID}>, domain is available.`);
+    return;
+  } else {
+    sendMessage(`Domain is not available`);
+  }
 }
 
 function sendMessage(message) {
