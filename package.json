@@ -11,8 +11,10 @@
   "author": "Bedirhan SAMSA <me@bedirhan.dev>",
   "license": "ISC",
   "dependencies": {
+    "@bedirhansamsa/whois": "^1.1.8",
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",
+    "twilio": "^3.76.1",
     "whois-json": "^2.0.4"
   }
 }

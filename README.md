@@ -12,6 +12,16 @@ To run this project, you will need to add the following environment variables to
 
 `DISCORD_USER_ID`
 
+`TWILO_ENABLED`
+
+`TWILIO_ACCOUNT_SID`
+
+`TWILIO_AUTH_TOKEN`
+
+`TWILIO_PHONE_NUMBER`
+
+`TWILIO_TO_PHONE_NUMBER`
+
 ## Installation
 
 ```bash
@@ -22,8 +32,29 @@ To run this project, you will need to add the following environment variables to
 
 ## Docker Installation
 
+### Without Twilo
+
 ```bash
-  docker run -e "DOMAIN_URL=yourdomain.com" -e "DISCORD_WEBHOOK_URL=yourwebook.com" -e "DISCORD_USER_ID=YOUR_ID" bedirhansamsa/domain-availability-checker
+  docker run
+  -e "DOMAIN_URL=yourdomain.com"
+  -e   "DISCORD_WEBHOOK_URL=yourwebook.com"
+  -e "DISCORD_USER_ID=YOUR_ID"
+  bedirhansamsa/domain-availability-checker
+```
+
+### With Twilo
+
+```bash
+  docker run
+  -e "DOMAIN_URL=yourdomain.com"
+  -e "DISCORD_WEBHOOK_URL=yourwebook.com"
+  -e "DISCORD_USER_ID=YOUR_ID"
+  -e "TWILO_ENABLED=true"
+  -e "TWILIO_ACCOUNT_SID=TEST"
+  -e "TWILIO_AUTH_TOKEN=test"
+  -e "TWILIO_PHONE_NUMBER=TEST"
+  -e "TWILIO_TO_PHONE_NUMBER=TEST"
+  bedirhansamsa/domain-availability-checker
 ```
 
 ## Authors
