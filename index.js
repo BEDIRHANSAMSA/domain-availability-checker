@@ -15,7 +15,15 @@ async function checkDomain() {
     return;
   }
 
-  var data = await whois(domain);
+  var data;
+
+  try {
+    data = await whois(domain);
+  } catch (err) {
+    console.log(err);
+    return;
+  }
+
   if (!data) {
     console.log("No data found");
     return;
