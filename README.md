@@ -50,7 +50,7 @@ To run this project, you will need to add the following environment variables to
 ```bash
   docker run
   -e "DURATION=3600000"
-  -e "DOMAIN_URL=bca.com.tr"
+  -e "DOMAIN_URL=test.com"
   -e "DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/"
   -e "DISCORD_USER_ID=TEST"
   -e "TWILO_ENABLED=true"
