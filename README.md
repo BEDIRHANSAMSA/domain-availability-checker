@@ -38,7 +38,7 @@ To run this project, you will need to add the following environment variables to
 
 ```bash
   docker run
-    -e "DURATION=3600000"
+  -e "DURATION=3600000"
   -e "DOMAIN_URL=yourdomain.com"
   -e   "DISCORD_WEBHOOK_URL=yourwebook.com"
   -e "DISCORD_USER_ID=YOUR_ID"
