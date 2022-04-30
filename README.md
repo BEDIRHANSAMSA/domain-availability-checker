@@ -6,6 +6,8 @@ Check the domain availability by sending a message to yourself via discord.
 
 To run this project, you will need to add the following environment variables to your .env file
 
+`DURATION`: The duration of the message in milliseconds.
+
 `DOMAIN_URL`
 
 `DISCORD_WEBHOOK_URL`
@@ -36,6 +38,7 @@ To run this project, you will need to add the following environment variables to
 
 ```bash
   docker run
+  -e "DURATION=3600000"
   -e "DOMAIN_URL=yourdomain.com"
   -e   "DISCORD_WEBHOOK_URL=yourwebook.com"
   -e "DISCORD_USER_ID=YOUR_ID"
@@ -46,14 +49,15 @@ To run this project, you will need to add the following environment variables to
 
 ```bash
   docker run
-  -e "DOMAIN_URL=yourdomain.com"
-  -e "DISCORD_WEBHOOK_URL=yourwebook.com"
-  -e "DISCORD_USER_ID=YOUR_ID"
+  -e "DURATION=3600000"
+  -e "DOMAIN_URL=bca.com.tr"
+  -e "DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/945786883844214784/ekgEQsg4QbYd0H2v7HZ0WpfBXR06AMkFh7kJYQECXNYTl4e5ka7fGl8Lu5S0ecMwlH0d"
+  -e "DISCORD_USER_ID=294102481359863811"
   -e "TWILO_ENABLED=true"
-  -e "TWILIO_ACCOUNT_SID=TEST"
-  -e "TWILIO_AUTH_TOKEN=test"
-  -e "TWILIO_PHONE_NUMBER=TEST"
-  -e "TWILIO_TO_PHONE_NUMBER=TEST"
+  -e "TWILIO_ACCOUNT_SID=AC09a834e5b4019f8a2c8cb39151795717"
+  -e "TWILIO_AUTH_TOKEN=055902f68d4eddb738a388931237cc54"
+  -e "TWILIO_PHONE_NUMBER=+19896012128"
+  -e "TWILIO_TO_PHONE_NUMBER=+905378384743"
   bedirhansamsa/domain-availability-checker
 ```
 

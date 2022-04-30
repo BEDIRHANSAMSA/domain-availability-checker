@@ -3,17 +3,19 @@ import "dotenv/config";
 import whois from "@bedirhansamsa/whois";
 import twilo from "twilio";
 
-console.log("Checking... ", process.env.DOMAIN_URL);
-setInterval(checkDomain, 1000 * 60 * 60);
+const domain = process.env.DOMAIN_URL;
+const duration = process.env.DURATION;
+
+if (!domain || !duration) {
+  console.log("No domain or duration specified in .env");
+  process.exit(1);
+}
+
+console.log("Checking... ", domain);
+setInterval(checkDomain, duration);
 
 async function checkDomain() {
-  const domain = process.env.DOMAIN_URL;
   const twiloIsEnabled = process.env.TWILO_ENABLED || false;
-
-  if (!domain) {
-    console.log("No domain specified in .env");
-    return;
-  }
 
   var data;
 
